@@ -33,6 +33,8 @@ chmod +x $HEROKU_DIR/mongo/bin/*
 pwd
 ls -ltra $HEROKU_DIR/mongo/bin/
 
+apt-get update
+apt-get install snmp
 
 
 echo "Creating run-time environment"
