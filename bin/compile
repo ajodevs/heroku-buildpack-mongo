@@ -29,7 +29,8 @@ curl $download_url -s -o - | tar xzf - -C /tmp
 mv /tmp/${BASE_FILE_NAME}/* $HEROKU_DIR/mongo
 
 chmod +x $HEROKU_DIR/mongo/bin/*
-chmod 700 /usr/local/bin/mongod
+ls -ltra /usr/local/bin
+chmod 700 /usr/local/bin
 ln -s $HEROKU_DIR/mongo/bin/mongod /usr/local/bin/mongod
 
 
