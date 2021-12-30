@@ -29,10 +29,18 @@ curl $download_url -s -o - | tar xzf - -C /tmp
 mv /tmp/${BASE_FILE_NAME}/* $HEROKU_DIR/mongo
 chmod +x $HEROKU_DIR/mongo/bin/*
 
+ln -s $HEROKU_DIR/mongo/bin/mongod /usr/local/sbin/bin/mongod
+
+
 echo "Creating run-time environment"
 mkdir -p $BUILD_DIR/.profile.d
-echo "export PATH=\"$HOME/.heroku/mongo/bin:$PATH\"" > $BUILD_DIR/.profile.d/mongo.sh
-export PATH=$HOME/.heroku/mongo/bin:$PATH
+echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $BUILD_DIR/.profile.d/mongo.sh
+
 echo "path: $PATH"
 echo "heroku dir: $HEROKU_DIR"
+echo "=========cat=========="
 cat $BUILD_DIR/.profile.d/mongo.sh
+echo "==========version========="
+mongod --version
+
+
