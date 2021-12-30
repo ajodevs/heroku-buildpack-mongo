@@ -32,6 +32,7 @@ chmod +x $HEROKU_DIR/mongo/bin/*
 echo "Creating run-time environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"$HOME/.heroku/mongo/bin:$PATH\"" > $BUILD_DIR/.profile.d/mongo.sh
+export PATH=$HOME/.heroku/mongo/bin:$PATH
 echo "path: $PATH"
 echo "heroku dir: $HEROKU_DIR"
 cat $BUILD_DIR/.profile.d/mongo.sh
