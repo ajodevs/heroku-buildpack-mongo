@@ -21,7 +21,7 @@ warnings=$(mktemp)
 #VERSION=4.0.19
 #4.4.0-1097-aws
 VERSION=4.4.0
-echo "1 path: $PATH"
+
 echo "Downloading and installing mongodb version $VERSION ..."
 BASE_FILE_NAME="mongodb-linux-x86_64-ubuntu1604-${VERSION}"
 download_url="https://fastdl.mongodb.org/linux/${BASE_FILE_NAME}.tgz"
@@ -31,20 +31,10 @@ curl $download_url -s -o - | tar xzf - -C /tmp
 mv /tmp/${BASE_FILE_NAME}/* $HEROKU_DIR/mongo
 chmod +x $HEROKU_DIR/mongo/bin/*
 
-echo "=========uname=========="
-uname 
-echo "=========uname=========="
-uname -r
-echo "=========uname=========="
-
-pwd
-ls -ltra $HEROKU_DIR/mongo/bin/
-
 
 echo "Creating run-time environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $BUILD_DIR/.profile.d/mongo.sh
 
-mongod --version
 
 
