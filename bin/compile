@@ -34,3 +34,4 @@ echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $BUILD_DIR/.profile.d/m
 echo "path: $PATH"
 echo "heroku dir: $HEROKU_DIR"
 ls $HEROKU_DIR
+sudo apt-get install -y mongodb-org
