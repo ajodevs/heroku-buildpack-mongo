@@ -39,11 +39,13 @@ echo "Creating run-time environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $BUILD_DIR/.profile.d/mongo.sh
 
-echo "path: $PATH"
+echo "2 path: $PATH"
 echo "heroku dir: $HEROKU_DIR"
 echo "=========cat=========="
 cat $BUILD_DIR/.profile.d/mongo.sh
 echo "==========version========="
+export PATH=$HEROKU_DIR/mongo/bin:$PATH
+echo "3 path: $PATH"
 mongod --version
 
 
