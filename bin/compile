@@ -29,7 +29,7 @@ curl $download_url -s -o - | tar xzf - -C /tmp
 mv /tmp/${BASE_FILE_NAME}/* $HEROKU_DIR/mongo
 chmod +x $HEROKU_DIR/mongo/bin/*
 
-ln -s $HEROKU_DIR/mongo/bin/mongod /usr/local/sbin/bin/mongod
+ln -s $HEROKU_DIR/mongo/bin/mongod /usr/local/bin/mongod
 
 
 echo "Creating run-time environment"
