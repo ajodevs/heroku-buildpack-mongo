@@ -27,7 +27,7 @@ BASE_FILE_NAME="mongodb-linux-x86_64-ubuntu1604-${VERSION}"
 download_url="https://fastdl.mongodb.org/linux/${BASE_FILE_NAME}.tgz"
 curl $download_url -s -o - | tar xzf - -C /tmp
 
-ls -ltra /tmp/${BASE_FILE_NAME}/
+ls -ltra /tmp/${BASE_FILE_NAME}/bin
 # Move mongodb binaries into the app directory
 mv /tmp/${BASE_FILE_NAME}/* $HEROKU_DIR/mongo
 chmod +x $HEROKU_DIR/mongo/bin/*
