@@ -7,6 +7,6 @@ Usage
 
 Example usage:
 
-    $ heroku create --buildpack http://github.com/trustradius/heroku-buildpack-mongo.git
+    $ heroku create --buildpack http://github.com/ajodevs/heroku-buildpack-mongo.git
 
     $ git push heroku master
